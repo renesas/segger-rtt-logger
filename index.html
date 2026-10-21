@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.12.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>rtt_console_readme_main</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">:root {
+--brand: #2b0a8c;
+--accent: #e6007e;
+--ink: #1f2430;
+--muted: #667085;
+--line: #e4e7ec;
+--surface: #f7f7fb;
+}
+* {
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+margin: 0 auto;
+max-width: 1120px;
+padding: 50px;
+color: var(--ink);
+background: #ffffff;
+font-family: "Segoe UI", Arial, sans-serif;
+line-height: 1.65;
+}
+a {
+color: var(--brand);
+}
+a:hover {
+color: var(--accent);
+}
+h1 {
+margin-top: 2.7rem;
+padding-bottom: 0.35rem;
+border-bottom: 2px solid var(--line);
+}
+h2 {
+margin-top: 2.4rem;
+padding-bottom: 0.3rem;
+border-bottom: 1px solid var(--line);
+}
+h3,
+h4,
+h5,
+h6 {
+margin-top: 2rem;
+}
+img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 1rem auto 0.35rem;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 1.25rem 0;
+}
+th,
+td {
+border: 1px solid var(--line);
+padding: 0.7rem;
+vertical-align: top;
+}
+th {
+background: var(--surface);
+text-align: left;
+}
+blockquote {
+margin: 1.2rem 0;
+padding: 0.7rem 1rem;
+border-left: 4px solid var(--brand);
+background: var(--surface);
+}
+code {
+font-family: Consolas, "Courier New", monospace;
+}
+pre {
+overflow-x: auto;
+padding: 1rem;
+border-radius: 8px;
+background: var(--surface);
+}
+
+body > h1:first-of-type {
+margin: -50px calc(50% - 50vw) 3rem;
+padding: 3.5rem max(50px, calc((100vw - 1120px) / 2));
+border: 0;
+background: linear-gradient(135deg, #250777, #3e16a3);
+color: #ffffff;
+font-size: clamp(2rem, 5vw, 3.5rem);
+line-height: 1.1;
+}
+@media (max-width: 640px) {
+body {
+padding: 20px;
+}
+body > h1:first-of-type {
+margin-top: -20px;
+padding: 2.5rem 20px;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="segger-rtt-logger--standard-c-stdio-over-segger-rtt">Segger RTT
+Logger — Standard C stdio over SEGGER RTT</h1>
+<h2 id="renesas-ra--bare-metal--j-link-rtt-console-no-uart">Renesas RA ·
+bare-metal · J-Link RTT console (no UART)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Item</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boards</strong></td>
+<td>FPB-RA0L1 · FPB-RA2E3 · FPB-RA4E2 · FPB-RA6E2 · FPB-RA8E1</td>
+</tr>
+<tr>
+<td><strong>Console transport</strong></td>
+<td>SEGGER RTT V8.58 — channel 0 over the on-board J-Link (SWD)</td>
+</tr>
+<tr>
+<td><strong>FSP</strong></td>
+<td>v6.5.0 · bare-metal (no RTOS) · LLVM (Arm Toolchain for Embedded
+21.1.1) / picolibc</td>
+</tr>
+<tr>
+<td><strong>Public interface</strong></td>
+<td>Standard C stdio (<code>&lt;stdio.h&gt;</code>) — no RS API to call,
+no init step</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Segger RTT Logger · FSP v6.5.0 · Rev 1.3 · October 2026</p>
+</blockquote>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#1-overview">Overview</a></li>
+<li><a href="#2-key-features">Key Features</a></li>
+<li><a href="#3-running-the-project">Running the Project</a>
+<ul>
+<li>3.1 <a href="#31-supported-boards">Supported Boards</a></li>
+<li>3.2 <a href="#32-requirements">Requirements</a></li>
+<li>3.3 <a href="#33-demo-bring-up">Demo Bring-Up</a></li>
+<li>3.4 <a href="#34-rtt-terminal">RTT Terminal</a></li>
+<li>3.5 <a href="#35-other-rtt-clients">Other RTT Clients</a></li>
+</ul></li>
+<li><a href="#4-fsp-configuration">FSP Configuration</a>
+<ul>
+<li>4.1 <a href="#41-bsp-settings">BSP Settings</a></li>
+<li>4.2 <a href="#42-fsp-stack-overview">FSP Stack Overview</a></li>
+<li>4.3 <a href="#43-segger-rtt-properties">SEGGER RTT
+Properties</a></li>
+</ul></li>
+<li><a href="#5-data-flow-architecture">Data Flow Architecture</a>
+<ul>
+<li>5.1 <a href="#51-repository-structure">Repository Structure</a></li>
+<li>5.2 <a href="#52-software-layer-architecture">Software-Layer
+Architecture</a></li>
+<li>5.3 <a href="#53-execution-model">Execution Model</a></li>
+<li>5.4 <a href="#54-rs-configuration">RS Configuration</a></li>
+<li>5.5 <a href="#55-rs-functions">RS Functions</a></li>
+</ul></li>
+<li><a href="#6-runtime-behavior">Runtime Behavior</a>
+<ul>
+<li>6.1 <a href="#61-runtime-flow">Runtime Flow</a></li>
+<li>6.2 <a href="#62-file-level-ownership-flow">File-Level Ownership
+Flow</a></li>
+<li>6.3 <a href="#63-write-decision-flow">Write Decision Flow</a></li>
+</ul></li>
+<li><a href="#7-configuration-parameters">Configuration
+Parameters</a></li>
+<li><a href="#8-error-handling">Error Handling</a></li>
+<li><a href="#9-limitations">Limitations</a></li>
+<li><a href="#10-integration-recommended">Integration Recommended</a>
+<ul>
+<li>10.1 <a href="#101-integration-guide">Integration Guide</a></li>
+<li>10.2 <a href="#102-adapting-to-custom-hardware">Adapting to Custom
+Hardware</a></li>
+<li>10.3 <a href="#103-integration-checklist">Integration
+Checklist</a></li>
+</ul></li>
+<li><a href="#11-example">Example</a></li>
+<li><a href="#12-troubleshooting">Troubleshooting</a></li>
+<li><a href="#13-summary">Summary</a></li>
+<li><a href="#14-references--documentation">References &amp;
+Documentation</a></li>
+</ol>
+<hr />
+<h2 id="1-overview">1. Overview</h2>
+<p>This project demonstrates a standard C console running over
+<strong>SEGGER RTT</strong> on Renesas RA microcontrollers. Application
+code uses the normal C library console — <code>printf</code>,
+<code>puts</code>, <code>putchar</code>, <code>getchar</code>,
+<code>scanf</code>, <code>fgets</code> on <code>stdin</code> /
+<code>stdout</code> / <code>stderr</code> — and the RS module routes it
+to the J-Link debug probe instead of a UART. No UART peripheral, no MCU
+pins, no add-on board and no USB-to-serial cable are needed: the
+on-board J-Link of the Fast Prototyping Board carries the console over
+the same USB cable used for debugging.</p>
+<p>The application is built on <strong>Renesas FSP v6.5.0</strong>,
+bare-metal (no RTOS), with the <strong>LLVM</strong> toolchain (Arm
+Toolchain for Embedded) and its <strong>picolibc</strong> C library, and
+uses a layered software architecture:<br />
+<strong>APP</strong> (Application) → <strong>Standard C stdio</strong> →
+<strong>RS</strong> (picolibc <code>stdin</code> / <code>stdout</code> /
+<code>stderr</code> streams) → <strong>SEGGER RTT</strong> →
+<strong>J-Link</strong> → <strong>RTT Viewer</strong></p>
+<p>Once running, the demo prints a banner, then reads each line typed in
+<strong>J-Link RTT Viewer</strong> and echoes it back as
+<code>You printed: &lt;line&gt;</code> — <em>existing stdio code runs
+unchanged; there is no RS function to call and no init step</em>.</p>
+<p>The project contains one example per board in
+<code>examples/fpb-&lt;board&gt;/</code> (<a href="#31-supported-boards">3.1 Supported Boards</a>). All examples run
+the same demo with the same sources, and each one builds in <strong>e²
+studio</strong> (managed build) and in <strong>VS Code</strong> (CMake /
+Ninja).</p>
+<hr />
+<h2 id="2-key-features">2. Key Features</h2>
+<p>In this project, <strong>RS</strong> (Renesas Software) is the
+software module that connects the picolibc standard streams
+(<code>stdin</code>, <code>stdout</code>, <code>stderr</code>) to SEGGER
+RTT channel 0. In the source tree it uses the <code>rs_</code> file
+prefix (<code>rs_segger_rtt_logger.c</code>,
+<code>rs_segger_rtt_logger_picolibc.c</code>). It has <strong>no public
+header</strong>: its public interface is the standard C library
+console.</p>
+<p>Core RS responsibilities:</p>
+<ul>
+<li>Define the global picolibc <code>stdin</code> / <code>stdout</code>
+/ <code>stderr</code> <code>FILE</code> objects, whose put / get
+callbacks call the RTT logic.</li>
+<li>Send <code>stdout</code> / <code>stderr</code> characters to the RTT
+up-buffer and read <code>stdin</code> characters from the RTT
+down-buffer.</li>
+<li>Never stall the CPU on output: when the buffer is full or no host is
+connected, the character is not accepted and <code>EOF</code> is
+reported — a character is never reported as written when it was
+not.</li>
+<li>Initialize SEGGER RTT automatically on first use — the application
+calls no init function.</li>
+<li>Use no dynamic allocation, no UART and no MCU pins. No RTOS is
+needed; with FreeRTOS the input wait yields with
+<code>vTaskDelay(1)</code>.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>libc call</th>
+<th>picolibc stream callback</th>
+<th>RTT operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>printf</code>, <code>puts</code>, <code>putchar</code>,
+<code>fprintf(stdout/stderr, …)</code></td>
+<td><code>put(c, stdout \| stderr)</code></td>
+<td><code>SEGGER_RTT_Write(0, …)</code> → up-buffer 0</td>
+</tr>
+<tr>
+<td><code>getchar</code>, <code>fgets</code>, <code>scanf</code></td>
+<td><code>get(stdin)</code></td>
+<td><code>SEGGER_RTT_HasKey()</code> / <code>SEGGER_RTT_GetKey()</code>
+← down-buffer 0</td>
+</tr>
+<tr>
+<td><code>fflush</code></td>
+<td><code>flush(stream)</code></td>
+<td>Nothing to do — the RTT ring buffer is the only buffer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-running-the-project">3. Running the Project</h2>
+<p>What you need, how to build and flash the example of your board, and
+how to connect the RTT terminal. The FSP configuration and the internals
+of the project are described from <a href="#4-fsp-configuration">4. FSP
+Configuration</a> on.</p>
+<h3 id="31-supported-boards">3.1 Supported Boards</h3>
+<table style="width:99%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>Board</th>
+<th>MCU</th>
+<th>Core · clock</th>
+<th>Flash / RAM</th>
+<th>Example folder</th>
+<th>J-Link device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FPB-RA0L1</td>
+<td>R7FA0L1074CFL</td>
+<td>Cortex-M23 · 32 MHz (HOCO)</td>
+<td>64 KB / 16 KB</td>
+<td><a href="examples/fpb-ra0l1"><code>examples/fpb-ra0l1</code></a></td>
+<td><code>R7FA0L107</code></td>
+</tr>
+<tr>
+<td>FPB-RA2E3</td>
+<td>R7FA2E3073CFL</td>
+<td>Cortex-M23 · 48 MHz (HOCO)</td>
+<td>64 KB / 16 KB</td>
+<td><a href="examples/fpb-ra2e3"><code>examples/fpb-ra2e3</code></a></td>
+<td><code>R7FA2E307</code></td>
+</tr>
+<tr>
+<td>FPB-RA4E2</td>
+<td>R7FA4E2B93CFM</td>
+<td>Cortex-M33 · 100 MHz (PLL)</td>
+<td>128 KB / 40 KB</td>
+<td><a href="examples/fpb-ra4e2"><code>examples/fpb-ra4e2</code></a></td>
+<td><code>R7FA4E2B9</code></td>
+</tr>
+<tr>
+<td>FPB-RA6E2</td>
+<td>R7FA6E2BB3CFM</td>
+<td>Cortex-M33 · 200 MHz (PLL)</td>
+<td>256 KB / 40 KB</td>
+<td><a href="examples/fpb-ra6e2"><code>examples/fpb-ra6e2</code></a></td>
+<td><code>R7FA6E2BB</code></td>
+</tr>
+<tr>
+<td>FPB-RA8E1</td>
+<td>R7FA8E1AFDCFB</td>
+<td>Cortex-M85 · 360 MHz (PLL)</td>
+<td>1 MB / 512 KB</td>
+<td><a href="examples/fpb-ra8e1"><code>examples/fpb-ra8e1</code></a></td>
+<td><code>R7FA8E1AF</code></td>
+</tr>
+</tbody>
+</table>
+<p>All examples are validated on hardware with e² studio and VS Code
+builds. On every board the debug interface is the <strong>J10</strong>
+micro-USB connector of the on-board J-Link OB (SWD), only the SWD debug
+pins are configured, and no add-on board is used. The demo needs about
+10–15 KB of flash and 2.3 KB of RAM (including the 1 KB main stack and
+the 1.2 KB RTT buffers); see the sizes per board in <a href="#step-4-build">Step 4</a>.</p>
+<p>In the steps below, <code>fpb-&lt;board&gt;</code> stands for the
+example folder and project name of your board, for example
+<code>fpb-ra4e2</code>.</p>
+<h3 id="32-requirements">3.2 Requirements</h3>
+<p><strong>Hardware:</strong> one of the boards in <a href="#31-supported-boards">3.1 Supported Boards</a> and a micro-USB
+cable. The on-board J-Link OB accesses the MCU over SWD and reads/writes
+the RTT buffers in RAM while the CPU runs; J-Link RTT Viewer on the PC
+shows the output and sends keyboard input. The RTT link works both
+during an IDE debug session and with the board running stand-alone.</p>
+<p><strong>Software:</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Renesas e² studio</td>
+<td>With FSP 6.5.0 installed (e² studio project)</td>
+</tr>
+<tr>
+<td>VS Code + Renesas extension</td>
+<td>CMake / Ninja build — requires the CMake Tools extension and
+Ninja</td>
+</tr>
+<tr>
+<td>Renesas FSP</td>
+<td>v6.5.0</td>
+</tr>
+<tr>
+<td>Renesas RA Smart Configurator (RASC)</td>
+<td>FSP 6.5.0 — used by the CMake build to generate project content</td>
+</tr>
+<tr>
+<td>LLVM toolchain</td>
+<td>Arm Toolchain for Embedded (ATfE) 21.1.1, with picolibc 1.8.10</td>
+</tr>
+<tr>
+<td>SEGGER J-Link Software Package</td>
+<td>Validated with V9.14a — includes <strong>J-Link RTT
+Viewer</strong></td>
+</tr>
+<tr>
+<td>SEGGER RTT</td>
+<td>V8.58 — latest official release: unmodified
+<code>SEGGER_RTT.c</code> / <code>.h</code> /
+<code>SEGGER_RTT_ConfDefaults.h</code> from <a href="https://github.com/SEGGERMicro/RTT">github.com/SEGGERMicro/RTT</a>
+(tag V8.58), bundled in <code>src/segger_rtt/</code> with SEGGER’s
+<code>LICENSE.md</code> (SEGGER BSD license);
+<code>SEGGER_RTT_Conf.h</code> is the project’s own configuration — see
+<code>src/segger_rtt/README.md</code></td>
+</tr>
+</tbody>
+</table>
+<p>No FSP peripheral driver, no RTOS and no heap are required by the
+RS.</p>
+<p>For detailed steps on using e² studio, refer to the Renesas e² studio
+User Guide: <a href="https://www.renesas.com/en/software-tool/e2-studio">e² studio |
+Renesas</a></p>
+<h3 id="33-demo-bring-up">3.3 Demo Bring-Up</h3>
+<p>The project name is <strong><code>fpb-&lt;board&gt;</code></strong>
+in both build flows. Output files:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Build flow</th>
+<th>Output folder</th>
+<th>Files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>e² studio (managed build)</td>
+<td><code>Debug/</code></td>
+<td><code>fpb-&lt;board&gt;.elf</code> · <code>.srec</code> ·
+<code>.map</code></td>
+</tr>
+<tr>
+<td>VS Code (CMake / Ninja)</td>
+<td><code>build/Debug/</code></td>
+<td><code>fpb-&lt;board&gt;.elf</code> · <code>.hex</code> ·
+<code>.map</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="step-1-hardware-setup">Step 1: Hardware Setup</h4>
+<ol type="1">
+<li>Connect a micro-USB cable from the PC to <strong>J10</strong> on the
+board. The board powers on and the on-board J-Link enumerates.</li>
+<li>No other connection is needed — there is no add-on board and no UART
+adapter.</li>
+</ol>
+<h4 id="step-2-add-project-to-ide">Step 2: Add Project to IDE</h4>
+<blockquote>
+<p><strong>Note:</strong> Use step <strong>2.A</strong> for <strong>e²
+studio</strong> and step <strong>2.B</strong> for <strong>VS
+Code</strong></p>
+</blockquote>
+<h4 id="step-2a-import-the-project-into-e²-studio">Step 2.A: Import the
+Project into e² studio</h4>
+<ol type="1">
+<li>Launch <strong>e² studio</strong> and select or create a workspace.
+The path must <strong>not contain spaces</strong>.<br />
+<code>C:\workSpace</code> ← Good    <code>C:\work Space</code> ←
+Bad</li>
+<li><strong>File → Import → General → Existing Projects into Workspace →
+Next</strong>.</li>
+<li>Click <strong>Browse</strong> → navigate to
+<code>examples/fpb-&lt;board&gt;</code>. The wizard detects
+<strong>fpb-&lt;board&gt;</strong> automatically. Click
+<strong>Finish</strong>.</li>
+<li>The project ships with two build configurations:
+<strong>Debug</strong> and <strong>Release</strong>. For bring-up,
+right-click the project → <strong>Build Configurations → Set Active →
+Debug</strong>.</li>
+</ol>
+<h4 id="step-2b-open-project-into-vs-code">Step 2.B: Open Project into
+VS Code</h4>
+<ol type="1">
+<li>Define two environment variables <strong>before</strong> starting VS
+Code:
+<ul>
+<li><code>ARM_LLVM_TOOLCHAIN_PATH</code> — the <code>bin</code> folder
+of the LLVM toolchain, for example<br />
+<code>C:/Users/&lt;user&gt;/AppData/Local/Programs/Renesas/e2_studio/toolchains/llvm_arm/ATfE-21.1.1-Windows-x86_64/bin</code></li>
+<li><code>RASC_EXE_PATH</code> — the FSP 6.5.0 RA Smart Configurator
+executable, for example<br />
+<code>C:/Users/&lt;user&gt;/.renesas/platform/sc/ra/fsp_6.5.0/eclipse/rasc.exe</code></li>
+</ul></li>
+<li>Launch <strong>VS Code</strong> and <strong>File → Open
+Folder</strong>.</li>
+<li>Navigate to the example folder
+(<code>examples/fpb-&lt;board&gt;</code>, not the repository root).
+Click <strong>Select Folder</strong>.</li>
+<li>When prompted for a kit, select <strong>ARM LLVM -
+Ninja</strong>.</li>
+<li>The default build configuration is <strong>Debug</strong>, and this
+is the one you need.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> <code>RASC_EXE_PATH</code> is required: during
+CMake configure, RASC generates the linker files
+(<code>bsp_linker_info.h</code>, <code>fsp_gen.lld</code>,
+<code>memory_regions.lld</code>). Without it the build fails with
+<code>&#39;bsp_linker_info.h&#39; file not found</code>. Avoid spaces in the
+toolchain and project paths.</p>
+</blockquote>
+<h4 id="step-3-review-fsp-configuration">Step 3: Review FSP
+Configuration</h4>
+<p>Double-click <code>configuration.xml</code> to open the RA
+Configuration view. Verify the BSP tab (the MCU of your board from <a href="#31-supported-boards">3.1 Supported Boards</a>, FSP 6.5.0, heap 0,
+main stack 0x400). The Stacks tab contains only the default
+<code>g_ioport</code> instance, and the Pins tab needs no changes — the
+RTT console uses no pins.</p>
+<h4 id="step-4-build">Step 4: Build</h4>
+<blockquote>
+<p><strong>Note:</strong> Use step <strong>4.A</strong> for <strong>e²
+studio</strong> and step <strong>4.B</strong> for <strong>VS
+Code</strong></p>
+</blockquote>
+<h4 id="step-4a-build-e²-studio">Step 4.A: Build e² studio</h4>
+<ol type="1">
+<li>Confirm the active build configuration is
+<strong>Debug</strong>.</li>
+<li>Press <strong>Ctrl+B</strong> or right-click the project →
+<strong>Build Project</strong>.</li>
+<li>A successful build prints zero errors and the image size
+(<code>llvm-size</code>).</li>
+</ol>
+<p>Output files are written to <code>Debug/</code>:
+<code>fpb-&lt;board&gt;.elf</code> · <code>.srec</code> ·
+<code>.map</code></p>
+<h4 id="step-4b-build-vs-code">Step 4.B: Build VS Code</h4>
+<ol type="1">
+<li>Press the Build icon on the bottom bar, or the Build button in the
+<strong>CMake</strong> tool on the right panel.</li>
+<li>The first configure runs RASC to generate project content (this
+takes a few seconds). A successful build ends with
+<code>Build finished with exit code 0</code>. Check the image size with
+<code>llvm-size build/Debug/fpb-&lt;board&gt;.elf</code>.</li>
+</ol>
+<p>Output files are written to <code>build/Debug/</code>:
+<code>fpb-&lt;board&gt;.elf</code> · <code>.hex</code> ·
+<code>.map</code></p>
+<p>Image size of the Debug builds (<code>text</code> / <code>data</code>
+/ <code>bss</code>, bytes):</p>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>e² studio (<code>Debug/</code>)</th>
+<th>VS Code (<code>build/Debug/</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FPB-RA0L1</td>
+<td>10,678 / 36 / 2,268</td>
+<td>10,702 / 36 / 2,268</td>
+</tr>
+<tr>
+<td>FPB-RA2E3</td>
+<td>10,810 / 36 / 2,284</td>
+<td>10,810 / 36 / 2,284</td>
+</tr>
+<tr>
+<td>FPB-RA4E2</td>
+<td>10,094 / 36 / 2,312</td>
+<td>10,358 / 36 / 2,308</td>
+</tr>
+<tr>
+<td>FPB-RA6E2</td>
+<td>10,142 / 36 / 2,312</td>
+<td>10,406 / 36 / 2,308</td>
+</tr>
+<tr>
+<td>FPB-RA8E1</td>
+<td>10,758 / 36 / 2,332</td>
+<td>14,942 / 36 / 2,328</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> The two build flows use slightly different
+compiler flags, so code size and symbol addresses differ (for example
+<code>_SEGGER_RTT</code>). Always take the RTT control block address
+from the <code>.map</code> file of the build you flashed — see <a href="#34-rtt-terminal">3.4 RTT Terminal</a>.</p>
+</blockquote>
+<h4 id="step-5-flash--run">Step 5: Flash &amp; Run</h4>
+<blockquote>
+<p><strong>Note:</strong> Use step <strong>5.A</strong> for <strong>e²
+studio</strong> and step <strong>5.B</strong> for <strong>VS
+Code</strong></p>
+</blockquote>
+<h4 id="step-5a-flash--run-e²-studio">Step 5.A: Flash &amp; Run e²
+studio</h4>
+<ol type="1">
+<li>Confirm the micro-USB cable is connected to J10 and the board is
+powered.</li>
+<li><strong>Run → Debug Configurations…</strong> → <strong>Renesas GDB
+Hardware Debugging → fpb-&lt;board&gt; Debug_Flat</strong> (shipped with
+the project).</li>
+<li>Verify the Debugger tab: <strong>J-Link (Renesas)</strong>, target =
+the <strong>J-Link device</strong> of your board (<a href="#31-supported-boards">3.1 Supported Boards</a>), interface
+<strong>SWD</strong>.</li>
+<li>Click <strong>Debug</strong>. e² studio downloads the
+<code>.elf</code> to the MCU via J-Link and halts at
+<code>main()</code>.</li>
+<li>Press <strong>Resume (F8)</strong> to start execution, then open
+J-Link RTT Viewer (<a href="#34-rtt-terminal">3.4 RTT
+Terminal</a>).</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> You may need to press <strong>Resume</strong>
+twice — once past a reset handler breakpoint, once to start
+<code>main()</code>.</p>
+</blockquote>
+<h4 id="step-5b-flash--run-vs-code">Step 5.B: Flash &amp; Run VS
+Code</h4>
+<ol type="1">
+<li>Confirm the micro-USB cable is connected to J10 and the board is
+powered.</li>
+<li>Press <strong>Ctrl+Shift+D</strong> to open <strong>Run and
+Debug</strong>. The project ships <code>.vscode/launch.json</code> with:
+<ol type="1">
+<li><strong>“type”</strong>: <code>renesas-hardware</code></li>
+<li><strong>“debuggerType”</strong>: <code>SEGGERJLINKARM</code></li>
+<li><strong>“deviceFamily”</strong>: <code>RA</code></li>
+<li><strong>“device”</strong>: the <strong>J-Link device</strong> of
+your board (<a href="#31-supported-boards">3.1 Supported
+Boards</a>)</li>
+</ol></li>
+<li>Click the <strong>Start Debugging</strong> icon; VS Code downloads
+the <code>.elf</code> to the MCU via J-Link and halts at
+<code>main()</code>.</li>
+<li><strong>Continue (F5)</strong> — nothing is written to RTT until
+execution passes <code>main()</code> — then open J-Link RTT Viewer (<a href="#34-rtt-terminal">3.4 RTT Terminal</a>).</li>
+</ol>
+<p>Call chain (both build flows):</p>
+<pre><code>main()                          ← FSP generated (ra_gen/main.c)
+└─ hal_entry()                  ← src/hal_entry.c
+   └─ segger_rtt_logger_app_run()     ← src/app/segger_rtt_logger_app.c (never returns)
+      └─ printf() / fgets()     ← standard C library (picolibc)
+         └─ put() / get()       ← RS stream callbacks → SEGGER RTT channel 0</code></pre>
+<blockquote>
+<p><strong>Note:</strong> For integration into your own project or
+custom hardware, check <a href="#10-integration-recommended">10.
+Integration Recommended</a>. This section is for running the packaged
+demo on the reference hardware.</p>
+</blockquote>
+<h3 id="34-rtt-terminal">3.4 RTT Terminal</h3>
+<ol type="1">
+<li>Open <strong>J-Link RTT Viewer</strong> and set:
+<ul>
+<li><strong>Connection to J-Link</strong>: <strong>USB</strong> (board
+running stand-alone), or <strong>Existing Session</strong> (an IDE debug
+session is already connected)</li>
+<li><strong>Target Device</strong>: the <strong>J-Link device</strong>
+of your board from <a href="#31-supported-boards">3.1 Supported
+Boards</a> — the exact device, not a generic core such as
+<code>CORTEX-M33</code> (with a generic core the J-Link connects but no
+output appears)</li>
+<li><strong>Target Interface &amp; Speed</strong>: <strong>SWD</strong>,
+4000 kHz</li>
+<li><strong>RTT Control Block</strong>: <strong>Auto Detection</strong>,
+or <strong>Address</strong> = the <code>_SEGGER_RTT</code> symbol from
+the <code>.map</code> file <strong>of the build you flashed</strong>
+(the e² studio and VS Code builds place it at different addresses)</li>
+</ul></li>
+<li>Output appears on <strong>Terminal 0</strong>. On start-up the
+application prints:</li>
+</ol>
+<pre><code>System Init
+Segger RTT Logger ready. Type a line and press Enter.</code></pre>
+<ol start="3" type="1">
+<li>Type a line in the RTT Viewer input field and press
+<strong>Enter</strong>. The application echoes it back:</li>
+</ol>
+<pre><code>You printed: hello RA</code></pre>
+<blockquote>
+<p><strong>Note:</strong> Output written before RTT Viewer connects
+stays in the 1 KB up-buffer and is shown when the Viewer attaches, as
+long as the buffer did not fill up.</p>
+</blockquote>
+<h3 id="35-other-rtt-clients">3.5 Other RTT Clients</h3>
+<p>Any SEGGER RTT client can be used instead of J-Link RTT Viewer:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Client</th>
+<th>How to connect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>J-Link RTT Viewer</strong></td>
+<td>GUI terminal — see <a href="#34-rtt-terminal">3.4 RTT
+Terminal</a></td>
+</tr>
+<tr>
+<td><strong>J-Link RTT Client</strong> (command line)</td>
+<td>While a J-Link connection is open (IDE debug session or J-Link
+Commander connected to the J-Link device of your board), run
+<code>JLinkRTTClient</code> — it shows Terminal 0 and sends typed lines
+to the target</td>
+</tr>
+<tr>
+<td><strong>PuTTY / Tera Term</strong></td>
+<td>While a J-Link connection is open, connect to
+<code>localhost</code>, port <strong>19021</strong>, connection type
+<strong>Raw</strong> or <strong>Telnet</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-fsp-configuration">4. FSP Configuration</h2>
+<p>FSP configuration can be done with <strong>e² studio</strong>,
+<strong>Renesas Smart Configurator (RASC)</strong>, or <strong>VS Code
+with the Renesas extension</strong>. The configuration produces the same
+result regardless of the tool used:</p>
+<ul>
+<li><strong>e² studio</strong>: <a href="https://www.renesas.com/en/document/qsg/renesas-ra-family-e2-studio-2023-10-or-higher-quick-start-guide?r=488826">e²
+studio Integrated Development Environment User’s Manual: Quick Start
+Guide</a> — see <strong>CHAPTER 3: PROJECT GENERATION</strong></li>
+<li><strong>VS Code Extension</strong>: <a href="https://tool-support.renesas.com/e2studio/vscode/docs/">Renesas VS
+Code Extensions User Guide</a> — see <strong>Section 3: Creating and
+Building a Project</strong>
+<ul>
+<li><strong>Renesas Smart Configurator (RASC)</strong>: <a href="https://tool-support.renesas.com/e2studio/vscode/docs/creating-and-building-project.html#using-renesas-ra">RA
+Smart Configurator | Renesas</a> — see <strong>Additional
+Details</strong></li>
+</ul></li>
+</ul>
+<h3 id="41-bsp-settings">4.1 BSP Settings</h3>
+<p>The BSP settings are the same on every board, except the board,
+device, memory and clock, which are listed in <a href="#31-supported-boards">3.1 Supported Boards</a>:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FSP Version</td>
+<td>6.5.0</td>
+</tr>
+<tr>
+<td>Board / device</td>
+<td>The FPB board and MCU of the example (<a href="#31-supported-boards">3.1 Supported Boards</a>)</td>
+</tr>
+<tr>
+<td>RTOS</td>
+<td>None (bare-metal)</td>
+</tr>
+<tr>
+<td>Main stack</td>
+<td>1,024 bytes (0x400)</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>0 bytes (no dynamic allocation)</td>
+</tr>
+<tr>
+<td>MCU Vcc</td>
+<td>3,300 mV</td>
+</tr>
+<tr>
+<td>Toolchain</td>
+<td>LLVM — Arm Toolchain for Embedded 21.1.1
+(<code>clang_arm</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-fsp-stack-overview">4.2 FSP Stack Overview</h3>
+<p>The RS uses <strong>no FSP stack</strong>. The FSP configuration
+contains only the RASC board defaults:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>FSP Module</th>
+<th>Instance</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BSP (<code>fsp_common</code>, MCU and FPB board support)</td>
+<td>—</td>
+<td>Startup, clocks, <code>ra_gen/main.c</code> →
+<code>hal_entry()</code></td>
+</tr>
+<tr>
+<td><code>r_ioport</code></td>
+<td><code>g_ioport</code></td>
+<td>Default board pin setup (not used by the RS)</td>
+</tr>
+<tr>
+<td>Arm CMSIS 6 Core (M)</td>
+<td>—</td>
+<td><code>__get_PRIMASK</code> / <code>__set_PRIMASK</code> /
+<code>__disable_irq</code> for the RTT lock</td>
+</tr>
+</tbody>
+</table>
+<p>There are no pin assignments, interrupts or peripheral clocks to
+configure for the console.</p>
+<h3 id="43-segger-rtt-properties">4.3 SEGGER RTT Properties</h3>
+<p>Defined in <code>src/segger_rtt/SEGGER_RTT_Conf.h</code> (the
+project’s own configuration):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Up / down buffers</td>
+<td>1 / 1</td>
+<td>Single “Terminal” channel (channel 0)</td>
+</tr>
+<tr>
+<td><code>BUFFER_SIZE_UP</code></td>
+<td>1024 B</td>
+<td>Target → PC (<code>stdout</code> / <code>stderr</code>) burst</td>
+</tr>
+<tr>
+<td><code>BUFFER_SIZE_DOWN</code></td>
+<td>64 B</td>
+<td>PC → target (<code>stdin</code>) line input</td>
+</tr>
+<tr>
+<td><code>SEGGER_RTT_MODE_DEFAULT</code></td>
+<td><code>SEGGER_RTT_MODE_NO_BLOCK_TRIM</code></td>
+<td>A full buffer or detached J-Link never stalls the CPU</td>
+</tr>
+<tr>
+<td>Locking</td>
+<td>CMSIS PRIMASK save / disable / restore</td>
+<td>Bare-metal, interrupt-safe, no RTOS</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> <code>SEGGER_RTT_printf.c</code> and the
+SEGGER syscall files are deliberately <strong>not</strong> part of
+<code>src/segger_rtt/</code>.
+<code>rs_segger_rtt_logger_picolibc.c</code> is the only stdio binding
+in the project.</p>
+</blockquote>
+<hr />
+<h2 id="5-data-flow-architecture">5. Data Flow Architecture</h2>
+<h3 id="51-repository-structure">5.1 Repository Structure</h3>
+<pre><code>&lt;repository root&gt;/
+│
+├── src/                                   ← Shared sources (copied into every example)
+│   ├── rs_segger_rtt_logger/              ← RS module: stdio → RTT
+│   │   ├── rs_segger_rtt_logger.c         ← RTT logic (rs_segger_rtt_logger_*_impl)
+│   │   ├── rs_segger_rtt_logger.h         ← Internal header (not a public API)
+│   │   └── rs_segger_rtt_logger_picolibc.c ← picolibc stdin / stdout / stderr streams
+│   └── segger_rtt/                        ← SEGGER RTT V8.58 (third-party, SEGGER BSD license)
+│       ├── README.md                      ← Source and version of the SEGGER files
+│       ├── LICENSE.md                     ← SEGGER license (unmodified)
+│       ├── SEGGER_RTT.c / SEGGER_RTT.h    ← Unmodified SEGGER files
+│       ├── SEGGER_RTT_ConfDefaults.h      ← Unmodified SEGGER file: defaults for unset settings
+│       └── SEGGER_RTT_Conf.h              ← Project&#39;s own RTT configuration
+│
+├── examples/
+│   └── fpb-&lt;board&gt;/                       ← One FSP project per board (fpb-ra0l1, fpb-ra2e3, fpb-ra4e2, fpb-ra6e2, fpb-ra8e1)
+│       ├── src/
+│       │   ├── hal_entry.c                ← FSP HAL entry → segger_rtt_logger_app_run()
+│       │   ├── hal_warmstart.c            ← RASC default warm-start hooks
+│       │   ├── app/
+│       │   │   └── segger_rtt_logger_app.c/.h ← APP layer: banner + bounded line echo (stdio only)
+│       │   ├── rs_segger_rtt_logger/      ← Copy of &lt;repository root&gt;/src/rs_segger_rtt_logger
+│       │   └── segger_rtt/                ← Copy of &lt;repository root&gt;/src/segger_rtt
+│       ├── ra_gen/  ra_cfg/  ra/          ← FSP-generated files (do not edit, not in git)
+│       ├── cmake/
+│       │   ├── llvm.cmake                 ← LLVM toolchain file (VS Code kit)
+│       │   ├── prebuild.cmake             ← Regenerate project content with RASC
+│       │   └── GeneratedCfg.cmake / GeneratedSrc.cmake ← RASC-generated build settings (do not edit)
+│       ├── script/
+│       │   └── fsp.lld                    ← LLVM linker script
+│       ├── .vscode/                       ← VS Code: CMake kits, settings, launch, tasks
+│       ├── CMakeLists.txt                 ← CMake build (adds RS include paths + crt0 / c++abi)
+│       ├── Config.cmake                   ← RASC path selection for the CMake build
+│       ├── configuration.xml              ← FSP configuration (open in e² studio / RASC)
+│       ├── .cproject / .project           ← e² studio managed-build project
+│       ├── fpb-&lt;board&gt; Debug_Flat.launch  ← e² studio debug configuration
+│       ├── fpb-&lt;board&gt;.code-workspace     ← VS Code workspace
+│       └── README.md                      ← Points to this file
+│
+└── README.md                              ← This file</code></pre>
+<p>The RS sources in every example are identical to <code>src/</code>.
+When the RS module changes, update <code>src/</code> and copy it into
+each example.</p>
+<blockquote>
+<p><strong>Note:</strong> Never manually edit files in
+<code>ra_gen/</code> or <code>ra_cfg/</code>, or
+<code>cmake/GeneratedCfg.cmake</code> /
+<code>cmake/GeneratedSrc.cmake</code>. They are regenerated by the FSP
+tooling whenever <code>configuration.xml</code> is saved. The RS include
+paths are therefore added in <code>CMakeLists.txt</code> (CMake) and in
+the project properties (e² studio).</p>
+</blockquote>
+<h3 id="52-software-layer-architecture">5.2 Software-Layer
+Architecture</h3>
+<p>Use this mental model: each layer has one clear responsibility and
+only calls the layer directly below it.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Main responsibility</th>
+<th>Key files</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application (APP)</td>
+<td>Product behavior — prints and reads lines with standard C stdio</td>
+<td><code>src/app/segger_rtt_logger_app.c</code>,
+<code>src/hal_entry.c</code></td>
+</tr>
+<tr>
+<td>Standard C library</td>
+<td>Formatting, line handling (picolibc tinystdio)</td>
+<td><code>printf</code>, <code>fgets</code>, …</td>
+</tr>
+<tr>
+<td>RS stream binding</td>
+<td>Defines <code>stdin</code> / <code>stdout</code> /
+<code>stderr</code>; per-character put / get</td>
+<td><code>src/rs_segger_rtt_logger/rs_segger_rtt_logger_picolibc.c</code></td>
+</tr>
+<tr>
+<td>RS logic</td>
+<td>fd validation, truthful partial writes, blocking reads</td>
+<td><code>src/rs_segger_rtt_logger/rs_segger_rtt_logger.c</code></td>
+</tr>
+<tr>
+<td>SEGGER RTT</td>
+<td>Control block, ring buffers, locking</td>
+<td><code>src/segger_rtt/SEGGER_RTT.c</code></td>
+</tr>
+<tr>
+<td>Hardware</td>
+<td>SWD debug port → J-Link OB → PC</td>
+<td>J10 micro-USB on the board</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important boundary</strong></p>
+<p>The application never calls the RS module or SEGGER RTT directly — it
+includes only <code>&lt;stdio.h&gt;</code>. Switching the console
+between RTT and UART is done by swapping the stream binding, not by
+changing application code.</p>
+<p><strong>Call flow (top-down)</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode mermaid"><code class="sourceCode mermaid"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">flowchart</span> <span class="cn">TD</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">A</span>[<span class="vs">APP layer\nsegger_rtt_logger_app.c</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">B</span>[<span class="vs">picolibc stdio\nprintf / fgets</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">C</span>[<span class="vs">RS stream binding\nput / get</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">D</span>[<span class="vs">RS logic\nrs_segger_rtt_logger</span><span class="sc">_*_</span><span class="vs">impl</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">E</span>[<span class="vs">SEGGER RTT\nchannel 0 buffers in RAM</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">F</span>[<span class="vs">J-Link OB over SWD\nRTT Viewer on PC</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">A</span> <span class="pp">--&gt;</span><span class="vs">|printf / fgets|</span> <span class="dt">B</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">B</span> <span class="pp">--&gt;</span><span class="vs">|put / get|</span> <span class="dt">C</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">C</span> <span class="pp">--&gt;</span> <span class="dt">D</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">D</span> <span class="pp">--&gt;</span><span class="vs">|SEGGER</span><span class="sc">_</span><span class="vs">RTT</span><span class="sc">_</span><span class="vs">Write / GetKey|</span> <span class="dt">E</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">E</span> <span class="pp">&lt;--&gt;</span><span class="vs">|SWD memory access|</span> <span class="dt">F</span></span></code></pre></div>
+<p><strong>One runtime cycle (echo)</strong></p>
+<ol type="1">
+<li>APP calls <code>fgets()</code>; picolibc calls the
+<code>stdin</code> get callback once per character.</li>
+<li>The RS module busy-waits until the RTT down-buffer has data, then
+returns one character.</li>
+<li>APP strips CR/LF and calls
+<code>printf(&quot;You printed: …&quot;)</code>.</li>
+<li>picolibc calls the <code>stdout</code> put callback for each
+character; the RS module writes it into the RTT up-buffer.</li>
+<li>J-Link reads the up-buffer over SWD and RTT Viewer displays the
+line.</li>
+</ol>
+<h3 id="53-execution-model">5.3 Execution Model</h3>
+<p>The project is <strong>bare-metal</strong> — there are no RTOS
+tasks.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Context</th>
+<th>Created by</th>
+<th>Stack</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main thread</td>
+<td>Reset handler / FSP startup</td>
+<td>1 KB (<code>g_main_stack</code>)</td>
+<td><code>main()</code> → <code>hal_entry()</code> →
+<code>segger_rtt_logger_app_run()</code>, runs forever</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The RS module is <strong>stateless</strong>: there is no open/close,
+no state machine and no shutdown path. The streams can be used at any
+time after reset.</li>
+<li><code>SEGGER_RTT_Init()</code> is deliberately <strong>not</strong>
+called. The RTT control block is initialized once, on the first RTT
+access. (Calling <code>SEGGER_RTT_Init()</code> again would reset the
+buffer offsets and lose buffered data.)</li>
+<li>RTT buffer access is protected by a short PRIMASK critical section,
+so the console is safe to use while interrupts are running. Calling
+stdio from an interrupt handler is not recommended (the blocking
+<code>get</code> callback).</li>
+</ul>
+<h3 id="54-rs-configuration">5.4 RS Configuration</h3>
+<p>The RS module has <strong>no configuration struct and no control
+block</strong> — there is nothing for the application to fill in or
+open. Configuration is compile-time only:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Macro</th>
+<th>File</th>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RS_SEGGER_RTT_LOGGER_CHANNEL</code></td>
+<td><code>rs_segger_rtt_logger.c</code></td>
+<td><code>0U</code></td>
+<td>RTT channel used for all three standard streams</td>
+</tr>
+<tr>
+<td><code>RS_SEGGER_RTT_LOGGER_FD_STDIN</code> / <code>_STDOUT</code> /
+<code>_STDERR</code></td>
+<td><code>rs_segger_rtt_logger.c</code></td>
+<td><code>0</code> / <code>1</code> / <code>2</code></td>
+<td>File descriptors accepted by the RTT logic</td>
+</tr>
+<tr>
+<td><code>BUFFER_SIZE_UP</code></td>
+<td><code>SEGGER_RTT_Conf.h</code></td>
+<td><code>1024U</code></td>
+<td>Up-buffer size (<code>#ifndef</code>-guarded, can be set from the
+build)</td>
+</tr>
+<tr>
+<td><code>BUFFER_SIZE_DOWN</code></td>
+<td><code>SEGGER_RTT_Conf.h</code></td>
+<td><code>64U</code></td>
+<td>Down-buffer size (<code>#ifndef</code>-guarded)</td>
+</tr>
+<tr>
+<td><code>SEGGER_RTT_MODE_DEFAULT</code></td>
+<td><code>SEGGER_RTT_Conf.h</code></td>
+<td><code>SEGGER_RTT_MODE_NO_BLOCK_TRIM</code></td>
+<td>Behavior when the up-buffer is full</td>
+</tr>
+</tbody>
+</table>
+<h3 id="55-rs-functions">5.5 RS Functions</h3>
+<h4 id="rs-functions-reference">RS Functions Reference</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Function / object</th>
+<th>Scope</th>
+<th>Purpose</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stdin</code>, <code>stdout</code>, <code>stderr</code></td>
+<td>Global (picolibc)</td>
+<td>The standard streams</td>
+<td>Defined in <code>rs_segger_rtt_logger_picolibc.c</code> with
+<code>FDEV_SETUP_STREAM</code>. Unbuffered.</td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_picolibc_putc_stdout()</code> /
+<code>_stderr()</code></td>
+<td>Static</td>
+<td>Stream put callbacks</td>
+<td>Return the character, or <code>EOF</code> if RTT did not accept
+it.</td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_picolibc_getc()</code></td>
+<td>Static</td>
+<td>Stream get callback</td>
+<td>Blocks until a character is available (<code>getchar()</code>
+semantics).</td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_picolibc_flush()</code></td>
+<td>Static</td>
+<td>Stream flush callback</td>
+<td>Returns 0 — nothing to flush.</td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_write_impl()</code></td>
+<td>Internal</td>
+<td>RTT write logic</td>
+<td>Returns the bytes actually accepted (<code>0..len</code>). Declared
+in the internal header <code>rs_segger_rtt_logger.h</code>.</td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_read_impl()</code></td>
+<td>Internal</td>
+<td>RTT read logic</td>
+<td>Blocks for the first byte, then returns the available bytes up to
+<code>len</code>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Applications must not call these functions or
+include <code>rs_segger_rtt_logger.h</code>. The public interface is
+<code>&lt;stdio.h&gt;</code> — see <a href="#11-example">11. Example</a>
+for a minimal application.</p>
+</blockquote>
+<h4 id="what-to-keep-in-mind">What To Keep In Mind</h4>
+<ul>
+<li>No init call is needed — the first <code>printf</code> initializes
+RTT.</li>
+<li>The streams are unbuffered: every character goes straight to the RTT
+buffer. No <code>setvbuf()</code> or <code>fflush()</code> is needed,
+and no heap is used.</li>
+<li>Output is never blocking: without a connected host, output beyond
+the 1 KB buffer is dropped (the put callback returns
+<code>EOF</code>).</li>
+<li><code>fgets()</code> / <code>getchar()</code> block until input
+arrives.</li>
+<li>Do not link <code>libsemihost</code> or <code>libdummyhost</code>:
+they also define <code>stdin</code> / <code>stdout</code> /
+<code>stderr</code>.</li>
+</ul>
+<hr />
+<h2 id="6-runtime-behavior">6. Runtime Behavior</h2>
+<h3 id="61-runtime-flow">6.1 Runtime Flow</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode mermaid"><code class="sourceCode mermaid"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">flowchart</span> <span class="cn">TD</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">A</span>[<span class="vs">FSP main</span>] <span class="pp">--&gt;</span> <span class="dt">B</span>[<span class="vs">hal_entry</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">B</span> <span class="pp">--&gt;</span> <span class="dt">C</span>[<span class="vs">segger_rtt_logger_app_run</span>]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   <span class="dt">C</span> <span class="pp">--&gt;</span> <span class="dt">E</span>[<span class="vs">printf banner</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>   <span class="dt">E</span> <span class="pp">--&gt;</span> <span class="dt">F</span>[<span class="vs">fgets from stdin</span>]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   <span class="dt">F</span> <span class="pp">--&gt;</span> <span class="dt">G</span>[<span class="vs">stdin get callback</span>]</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>   <span class="dt">G</span> <span class="pp">--&gt;</span> <span class="dt">H</span>{<span class="vs">RTT down-buffer has data</span>}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>   <span class="dt">H</span> <span class="pp">--&gt;</span><span class="vs">|no|</span> <span class="dt">H</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>   <span class="dt">H</span> <span class="pp">--&gt;</span><span class="vs">|yes|</span> <span class="dt">I</span>[<span class="vs">return one character</span>]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>   <span class="dt">I</span> <span class="pp">--&gt;</span> <span class="dt">J</span>{<span class="vs">newline received</span>}</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>   <span class="dt">J</span> <span class="pp">--&gt;</span><span class="vs">|no|</span> <span class="dt">G</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>   <span class="dt">J</span> <span class="pp">--&gt;</span><span class="vs">|yes|</span> <span class="dt">K</span>[<span class="vs">strip CR/LF</span>]</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>   <span class="dt">K</span> <span class="pp">--&gt;</span> <span class="dt">L</span>[<span class="vs">printf You printed</span>]</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>   <span class="dt">L</span> <span class="pp">--&gt;</span> <span class="dt">M</span>[<span class="vs">stdout put callback per character</span>]</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>   <span class="dt">M</span> <span class="pp">--&gt;</span> <span class="dt">N</span>[<span class="vs">SEGGER_RTT_Write to up-buffer</span>]</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>   <span class="dt">N</span> <span class="pp">--&gt;</span> <span class="dt">F</span></span></code></pre></div>
+<h3 id="62-file-level-ownership-flow">6.2 File-Level Ownership Flow</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode mermaid"><code class="sourceCode mermaid"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">flowchart</span> <span class="cn">LR</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">subgraph</span> <span class="dt">APP</span>[<span class="vs">APP Layer</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">A1</span>[<span class="vs">hal_entry.c</span>]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">A2</span>[<span class="vs">app/segger_rtt_logger_app.c</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>   <span class="kw">subgraph</span> <span class="dt">LIBC</span>[<span class="vs">C Library</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">L1</span>[<span class="vs">picolibc stdio</span>]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>   <span class="kw">subgraph</span> <span class="dt">RS</span>[<span class="vs">RS Module</span>]</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">P1</span>[<span class="vs">rs_segger_rtt_logger_picolibc.c</span>]</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">P2</span>[<span class="vs">rs_segger_rtt_logger.c</span>]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>   <span class="kw">subgraph</span> <span class="dt">RTT</span>[<span class="vs">SEGGER RTT</span>]</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">S1</span>[<span class="vs">SEGGER_RTT.c</span>]</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">S2</span>[<span class="vs">SEGGER_RTT_Conf.h</span>]</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>   <span class="kw">end</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>   <span class="dt">A1</span> <span class="pp">--&gt;</span> <span class="dt">A2</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>   <span class="dt">A2</span> <span class="pp">--&gt;</span> <span class="dt">L1</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>   <span class="dt">L1</span> <span class="pp">--&gt;</span> <span class="dt">P1</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>   <span class="dt">P1</span> <span class="pp">--&gt;</span> <span class="dt">P2</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>   <span class="dt">P2</span> <span class="pp">--&gt;</span> <span class="dt">S1</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>   <span class="dt">S1</span> <span class="pp">--&gt;</span> <span class="dt">S2</span></span></code></pre></div>
+<h3 id="63-write-decision-flow">6.3 Write Decision Flow</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode mermaid"><code class="sourceCode mermaid"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">flowchart</span> <span class="cn">TD</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">A</span>[<span class="vs">stdout put callback c</span>] <span class="pp">--&gt;</span> <span class="dt">B</span>[<span class="vs">rs_segger_rtt_logger_write_impl fd 1 or 2, len 1</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">B</span> <span class="pp">--&gt;</span> <span class="dt">C</span>{<span class="vs">fd is 1 or 2</span>}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>   <span class="dt">C</span> <span class="pp">--&gt;</span><span class="vs">|no|</span> <span class="dt">D</span>[<span class="vs">errno EBADF, return -1</span>]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>   <span class="dt">C</span> <span class="pp">--&gt;</span><span class="vs">|yes|</span> <span class="dt">F</span>[<span class="vs">SEGGER_RTT_Write</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>   <span class="dt">F</span> <span class="pp">--&gt;</span> <span class="dt">G</span>{<span class="vs">byte accepted</span>}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>   <span class="dt">G</span> <span class="pp">--&gt;</span><span class="vs">|no|</span> <span class="dt">H</span>[<span class="vs">return 0</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>   <span class="dt">G</span> <span class="pp">--&gt;</span><span class="vs">|yes|</span> <span class="dt">I</span>[<span class="vs">return 1</span>]</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>   <span class="dt">D</span> <span class="pp">--&gt;</span> <span class="dt">J</span>[<span class="vs">put returns EOF</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>   <span class="dt">H</span> <span class="pp">--&gt;</span> <span class="dt">J</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>   <span class="dt">I</span> <span class="pp">--&gt;</span> <span class="dt">K</span>[<span class="vs">put returns c</span>]</span></code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> There is no stop/shutdown path — the RS module
+is stateless and the demo application never returns.</p>
+</blockquote>
+<hr />
+<h2 id="7-configuration-parameters">7. Configuration Parameters</h2>
+<p>Key FSP and firmware configuration options:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>File</th>
+<th>Default</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BUFFER_SIZE_UP</code></td>
+<td><code>src/segger_rtt/SEGGER_RTT_Conf.h</code></td>
+<td>1024 B</td>
+<td>Output buffer; increase for bursty output, decrease to save RAM</td>
+</tr>
+<tr>
+<td><code>BUFFER_SIZE_DOWN</code></td>
+<td><code>src/segger_rtt/SEGGER_RTT_Conf.h</code></td>
+<td>64 B</td>
+<td>Input buffer; increase if long lines are pasted at once</td>
+</tr>
+<tr>
+<td><code>SEGGER_RTT_MODE_DEFAULT</code></td>
+<td><code>src/segger_rtt/SEGGER_RTT_Conf.h</code></td>
+<td><code>NO_BLOCK_TRIM</code></td>
+<td><code>BLOCK_IF_FIFO_FULL</code> guarantees delivery but stalls
+without a host</td>
+</tr>
+<tr>
+<td><code>RS_SEGGER_RTT_LOGGER_CHANNEL</code></td>
+<td><code>src/rs_segger_rtt_logger/rs_segger_rtt_logger.c</code></td>
+<td>0</td>
+<td>RTT terminal channel</td>
+</tr>
+<tr>
+<td><code>APP_CONSOLE_LINE_MAX</code></td>
+<td><code>src/app/segger_rtt_logger_app.c</code></td>
+<td>128</td>
+<td>Demo input line length, including NUL (up to 127 characters are
+echoed)</td>
+</tr>
+<tr>
+<td>Main stack</td>
+<td>FSP Configurator (BSP)</td>
+<td>0x400</td>
+<td>Stack for <code>main()</code> and <code>printf</code></td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>FSP Configurator (BSP)</td>
+<td>0</td>
+<td>No dynamic allocation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-error-handling">8. Error Handling</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Status / Error</th>
+<th>Cause</th>
+<th>Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>put callback returns <code>EOF</code></td>
+<td>RTT up-buffer full / no host draining it</td>
+<td>Not a fault — output resumes when a host drains the buffer; keep RTT
+Viewer attached or increase <code>BUFFER_SIZE_UP</code></td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_write_impl()</code> returns -1,
+<code>errno = EBADF</code></td>
+<td>Unsupported file descriptor (internal)</td>
+<td>Only <code>stdin</code> / <code>stdout</code> / <code>stderr</code>
+are routed to RTT</td>
+</tr>
+<tr>
+<td><code>rs_segger_rtt_logger_*_impl()</code> returns -1,
+<code>errno = EFAULT</code></td>
+<td><code>NULL</code> buffer (internal)</td>
+<td>Caller bug — cannot happen through the stream callbacks</td>
+</tr>
+<tr>
+<td>Link error: multiple definition of <code>stdin</code> /
+<code>stdout</code> / <code>stderr</code></td>
+<td><code>libsemihost</code> / <code>libdummyhost</code> or another
+stdio binding linked</td>
+<td>Remove it — <code>rs_segger_rtt_logger_picolibc.c</code> must be the
+only definition</td>
+</tr>
+<tr>
+<td>Build error: <code>&#39;bsp_linker_info.h&#39; file not found</code> (VS
+Code)</td>
+<td>RASC not run during CMake configure</td>
+<td>Set <code>RASC_EXE_PATH</code> — see <a href="#step-2b-open-project-into-vs-code">Step 2.B</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-limitations">9. Limitations</h2>
+<ul>
+<li><strong>J-Link required</strong>: The console needs a J-Link probe
+(on-board J-Link OB or external) and J-Link software on the PC. There is
+no UART fallback.</li>
+<li><strong>Toolchain</strong>: LLVM (Arm Toolchain for Embedded) with
+picolibc only. The stream binding uses picolibc’s
+<code>FDEV_SETUP_STREAM</code>; other C libraries are not
+supported.</li>
+<li><strong>Single channel</strong>: Only RTT channel 0; no multiple
+terminals.</li>
+<li><strong>Output without a host</strong>: With
+<code>NO_BLOCK_TRIM</code>, output is dropped once the 1 KB up-buffer is
+full and no host is draining it (by design — the CPU is never
+stalled).</li>
+<li><strong>Blocking input</strong>: the <code>stdin</code> get callback
+busy-waits for the next character (the examples are bare-metal). In a
+FreeRTOS project (<code>BSP_CFG_RTOS == 2</code>) the RS calls
+<code>vTaskDelay(1)</code> while it waits, so lower-priority tasks can
+run; input must then be read from a task after the scheduler has
+started, never from an ISR or a critical section.</li>
+<li><strong>Demo scope</strong>: The application is a line echo, not a
+full CLI.</li>
+<li><strong>Line length</strong>: Each entered line produces one
+response. Up to 127 characters are echoed; the rest of a longer line is
+discarded and the echo ends with <code>(truncated)</code>.</li>
+</ul>
+<hr />
+<h2 id="10-integration-recommended">10. Integration Recommended</h2>
+<blockquote>
+<p><strong>Note:</strong> If you’re running the packaged demo on the
+reference hardware, see <a href="#33-demo-bring-up">3.3 Demo
+Bring-Up</a>. This section is intended for integrating the code into
+your own project and hardware.</p>
+</blockquote>
+<p>The RS uses no peripheral, pins or FSP driver, so it moves to any RA
+MCU with an SWD debug port without changes. The integration touch-points
+are the two source folders, the include paths and the link libraries,
+and making sure no other module defines the standard streams.</p>
+<p>This section walks through that work:</p>
+<ul>
+<li><a href="#101-integration-guide">10.1 Integration Guide</a> — the
+ordered, step-by-step procedure.</li>
+<li><a href="#102-adapting-to-custom-hardware">10.2 Adapting to Custom
+Hardware</a> — what can change on your board.</li>
+<li><a href="#103-integration-checklist">10.3 Integration Checklist</a>
+— final verification before running on your board.</li>
+</ul>
+<hr />
+<h3 id="101-integration-guide">10.1 Integration Guide</h3>
+<p>Follow these steps, in order, when bringing this code into your own
+project or custom hardware:</p>
+<ol type="1">
+<li><strong>Check the toolchain and MCU.</strong> The project must use
+LLVM (Arm Toolchain for Embedded) with picolibc. The MCU needs an SWD
+debug port and about 1.2 KB of free RAM for the RTT control block and
+buffers.</li>
+<li><strong>Copy the RS into your project’s <code>src/</code>.</strong>
+<ul>
+<li><strong>Always required:</strong>
+<code>src/rs_segger_rtt_logger/</code> and
+<code>src/segger_rtt/</code>.</li>
+<li><strong>Optional:</strong> <code>src/app/</code> — omit or replace
+with your own application.</li>
+<li><strong>Do not copy:</strong> <code>ra_gen/</code>,
+<code>ra_cfg/</code> and <code>cmake/Generated*.cmake</code> — these are
+FSP-generated for your own project.</li>
+</ul></li>
+<li><strong>Update the build.</strong>
+<ul>
+<li>Add include paths <code>src/rs_segger_rtt_logger</code> and
+<code>src/segger_rtt</code> — in e² studio under <em>C/C++ Build →
+Settings → Compiler → Includes</em> (Debug <strong>and</strong>
+Release), in CMake in <code>CMakeLists.txt</code> (not in the generated
+files).</li>
+<li>Link <code>crt0</code> and <code>c++abi</code> (default for FSP LLVM
+projects).</li>
+</ul></li>
+<li><strong>Remove other stdio bindings.</strong> Make sure nothing else
+defines <code>stdin</code> / <code>stdout</code> / <code>stderr</code>
+(no <code>libsemihost</code>, no <code>libdummyhost</code>, no UART
+stdio binding).</li>
+<li><strong>Use standard C stdio</strong> in your code.</li>
+</ol>
+<p>Once these steps are complete, validate the result against <a href="#103-integration-checklist">10.3 Integration Checklist</a>.</p>
+<hr />
+<h3 id="102-adapting-to-custom-hardware">10.2 Adapting to Custom
+Hardware</h3>
+<p>The RTT console has no board signals to remap. The items below are
+the only ones that can change on a custom board:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Item</th>
+<th>Reference (FPB boards)</th>
+<th>What can change</th>
+<th>Where to update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debug probe</td>
+<td>On-board J-Link OB via J10</td>
+<td>Any SEGGER J-Link connected to the MCU SWD header</td>
+<td>Hardware only</td>
+</tr>
+<tr>
+<td>SWD pins (SWDIO / SWCLK)</td>
+<td>Dedicated MCU debug pins</td>
+<td>Cannot be remapped — keep them free for debugging</td>
+<td>Board schematic</td>
+</tr>
+<tr>
+<td>J-Link device name</td>
+<td>The MCU of the board (<a href="#31-supported-boards">3.1 Supported
+Boards</a>)</td>
+<td>The J-Link device name of your MCU</td>
+<td>RTT Viewer and the debug configuration</td>
+</tr>
+<tr>
+<td>RTT RAM</td>
+<td>~1.2 KB in SRAM</td>
+<td>Buffer sizes</td>
+<td><code>BUFFER_SIZE_UP</code> / <code>BUFFER_SIZE_DOWN</code> in
+<code>SEGGER_RTT_Conf.h</code> or build <code>-D</code></td>
+</tr>
+<tr>
+<td>Buffer-full behavior</td>
+<td><code>NO_BLOCK_TRIM</code></td>
+<td><code>BLOCK_IF_FIFO_FULL</code> or <code>NO_BLOCK_SKIP</code></td>
+<td><code>SEGGER_RTT_MODE_DEFAULT</code> in
+<code>SEGGER_RTT_Conf.h</code></td>
+</tr>
+<tr>
+<td>Locking</td>
+<td>CMSIS PRIMASK</td>
+<td>RTOS mutex / critical section when stdio is used from several
+tasks</td>
+<td><code>SEGGER_RTT_LOCK()</code> / <code>SEGGER_RTT_UNLOCK()</code> in
+<code>SEGGER_RTT_Conf.h</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="103-integration-checklist">10.3 Integration Checklist</h3>
+<p>Before running your application on <strong>your own board</strong>,
+verify the following:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Toolchain is LLVM (Arm Toolchain for
+Embedded) with picolibc.</label></li>
+<li><label><input type="checkbox"></input><code>src/rs_segger_rtt_logger/</code> and
+<code>src/segger_rtt/</code> are compiled, with both folders on the
+include path (Debug and Release).</label></li>
+<li><label><input type="checkbox"></input><code>crt0</code> and
+<code>c++abi</code> are linked; <code>libsemihost</code> /
+<code>libdummyhost</code> are <strong>not</strong>.</label></li>
+<li><label><input type="checkbox"></input>Nothing else defines
+<code>stdin</code> / <code>stdout</code> / <code>stderr</code> (no
+multiple-definition errors).</label></li>
+<li><label><input type="checkbox"></input>About 1.2 KB of RAM is available for
+RTT (check the <code>.map</code> for <code>_SEGGER_RTT</code>,
+<code>_acUpBuffer</code>, <code>_acDownBuffer</code>).</label></li>
+<li><label><input type="checkbox"></input>The SWD debug pins are free and a
+J-Link is connected; RTT Viewer uses the correct device name and the
+<code>_SEGGER_RTT</code> address of the build you flashed (or Auto
+Detection).</label></li>
+</ul>
+<hr />
+<h2 id="11-example">11. Example</h2>
+<h3 id="minimal-console-application">Minimal Console Application</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;string.h&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> app_entry<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">char</span> line<span class="op">[</span><span class="dv">128</span><span class="op">];</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* ① Write — goes to RTT Terminal 0, no init call needed */</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello from RA over RTT</span><span class="sc">\r\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    fprintf<span class="op">(</span>stderr<span class="op">,</span> <span class="st">&quot;stderr also goes to RTT</span><span class="sc">\r\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* ② Read — blocks until a line is entered in RTT Viewer */</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(;;)</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>NULL <span class="op">!=</span> fgets<span class="op">(</span>line<span class="op">,</span> <span class="op">(</span><span class="dt">int</span><span class="op">)</span><span class="kw">sizeof</span> line<span class="op">,</span> stdin<span class="op">))</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>            line<span class="op">[</span>strcspn<span class="op">(</span>line<span class="op">,</span> <span class="st">&quot;</span><span class="sc">\r\n</span><span class="st">&quot;</span><span class="op">)]</span> <span class="op">=</span> <span class="ch">&#39;</span><span class="sc">\0</span><span class="ch">&#39;</span><span class="op">;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>            printf<span class="op">(</span><span class="st">&quot;You printed: </span><span class="sc">%s\r\n</span><span class="st">&quot;</span><span class="op">,</span> line<span class="op">);</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>The demo application <code>src/app/segger_rtt_logger_app.c</code>
+uses the same pattern, and also handles lines longer than its buffer
+(one response per line, ending with <code>(truncated)</code>).</p>
+<hr />
+<h2 id="12-troubleshooting">12. Troubleshooting</h2>
+<p><strong>Symptom</strong>: No output in RTT Viewer - Confirm the
+firmware is running (resumed past <code>main()</code>), not halted at a
+breakpoint - Check the RTT control block address: the e² studio and VS
+Code builds place <code>_SEGGER_RTT</code> at <strong>different
+addresses</strong>. Use <strong>Auto Detection</strong>, or the address
+from the <code>.map</code> file of the build you flashed - Select the
+exact J-Link device of your board in RTT Viewer (<a href="#31-supported-boards">3.1 Supported Boards</a>), not a generic
+core such as <code>CORTEX-M33</code> — with a generic core the J-Link
+connects but no output appears - During an IDE debug session, connect
+RTT Viewer with <strong>Existing Session</strong> - Only one tool can
+use the J-Link at a time; close other debuggers or RTT clients, or
+reconnect the USB cable</p>
+<p><strong>Symptom</strong>: VS Code build fails with
+<code>&#39;bsp_linker_info.h&#39; file not found</code> -
+<code>RASC_EXE_PATH</code> is not set, so RASC did not generate the
+linker files during configure. Set it (see <a href="#step-2b-open-project-into-vs-code">Step 2.B</a>), restart VS Code
+and configure again</p>
+<p><strong>Symptom</strong>: VS Code configure fails with
+<code>Toolchain path not defined</code> - Set
+<code>ARM_LLVM_TOOLCHAIN_PATH</code> to the toolchain <code>bin</code>
+folder and restart VS Code</p>
+<p><strong>Symptom</strong>: e² studio build fails with
+<code>&#39;SEGGER_RTT.h&#39; file not found</code> (or
+<code>segger_rtt_logger_app.h</code>) - The include paths
+<code>src/rs_segger_rtt_logger</code>, <code>src/segger_rtt</code>,
+<code>src/app</code> are missing for the active configuration. Add them
+under <em>C/C++ Build → Settings → Compiler → Includes</em> (Debug
+<strong>and</strong> Release)</p>
+<p><strong>Symptom</strong>:
+<code>multiple definition of &#39;stdout&#39;</code> link error - Another stdio
+binding is in the build (for example <code>libsemihost</code> or a UART
+stdio file); remove it</p>
+<p><strong>Symptom</strong>: Typed input is not echoed - Press
+<strong>Enter</strong> — the demo reads whole lines with
+<code>fgets()</code> - In RTT Viewer, make sure the input is sent with
+an end-of-line (<strong>Input → End of line</strong>)</p>
+<p><strong>Symptom</strong>: Part of the output is missing - The
+up-buffer filled while no host was draining it
+(<code>NO_BLOCK_TRIM</code> drops the excess); keep RTT Viewer connected
+or increase <code>BUFFER_SIZE_UP</code></p>
+<hr />
+<h2 id="13-summary">13. Summary</h2>
+<p>A <strong>ready-to-run standard C console over SEGGER RTT</strong> on
+five Renesas FPB boards, using only the on-board J-Link: the RS module
+routes <code>stdin</code> / <code>stdout</code> / <code>stderr</code> to
+RTT channel 0 — no UART, no pins, no RTOS, no dynamic allocation and no
+init call — so existing <code>printf</code> / <code>fgets</code> code
+runs unchanged.</p>
+<p>For a quick start: <em>open the example of your board → build → flash
+via J-Link → open J-Link RTT Viewer</em>.</p>
+<hr />
+<h2 id="14-references--documentation">14. References &amp;
+Documentation</h2>
+<p>Project specific reference:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Document</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FPB-<a href="https://www.renesas.com/en/design-resources/boards-kits/fpb-ra0l1">RA0L1</a>
+· <a href="https://www.renesas.com/en/design-resources/boards-kits/fpb-ra2e3">RA2E3</a>
+· <a href="https://www.renesas.com/en/design-resources/boards-kits/fpb-ra4e2">RA4E2</a>
+· <a href="https://www.renesas.com/en/design-resources/boards-kits/fpb-ra6e2">RA6E2</a>
+· <a href="https://www.renesas.com/en/design-resources/boards-kits/fpb-ra8e1">RA8E1</a>
+board pages</td>
+<td>User’s manual, schematic, jumper positions and connector pinout of
+each board</td>
+</tr>
+<tr>
+<td><a href="https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/">SEGGER
+RTT</a></td>
+<td>Real-Time Transfer technology overview</td>
+</tr>
+<tr>
+<td><a href="https://www.segger.com/products/debug-probes/j-link/tools/rtt-viewer/">SEGGER
+J-Link RTT Viewer</a></td>
+<td>RTT Viewer user guide</td>
+</tr>
+<tr>
+<td><a href="https://github.com/picolibc/picolibc">picolibc</a></td>
+<td>C library used by the LLVM toolchain (tinystdio streams)</td>
+</tr>
+</tbody>
+</table>
+<p>Renesas general reference:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Document</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://code.visualstudio.com/docs">VS Code</a></td>
+<td>Visual Studio Code documentation</td>
+</tr>
+<tr>
+<td><a href="https://www.renesas.com/en/software-tool/e2-studio">e²
+studio Renesas</a></td>
+<td>e² studio user guide and tool page</td>
+</tr>
+<tr>
+<td><a href="https://renesas.github.io/fsp/">Renesas FSP
+Documentation</a></td>
+<td>FSP API reference for all modules used</td>
+</tr>
+<tr>
+<td><a href="https://www.segger.com/products/debug-probes/j-link/tools/j-link-software/">J-Link
+Software</a></td>
+<td>SEGGER J-Link tools installer (includes RTT Viewer)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Feedback &amp; Support</strong></p>
+<ul>
+<li><a href="https://community.renesas.com/">Renesas Engineering
+Community</a></li>
+<li><a href="https://www.renesas.com/eu/en/support?nid=1564826&amp;issue_type=technical">Contact
+Technical Support</a></li>
+<li><a href="https://www.renesas.com/eu/en/buy-sample/locations">Contact
+a Sales Representative</a></li>
+</ul>
+</body>
+</html>

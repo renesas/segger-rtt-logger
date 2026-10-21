@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.12.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>rtt_console_readme_segger</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">:root {
+--brand: #2b0a8c;
+--accent: #e6007e;
+--ink: #1f2430;
+--muted: #667085;
+--line: #e4e7ec;
+--surface: #f7f7fb;
+}
+* {
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+margin: 0 auto;
+max-width: 1120px;
+padding: 50px;
+color: var(--ink);
+background: #ffffff;
+font-family: "Segoe UI", Arial, sans-serif;
+line-height: 1.65;
+}
+a {
+color: var(--brand);
+}
+a:hover {
+color: var(--accent);
+}
+h1 {
+margin-top: 2.7rem;
+padding-bottom: 0.35rem;
+border-bottom: 2px solid var(--line);
+}
+h2 {
+margin-top: 2.4rem;
+padding-bottom: 0.3rem;
+border-bottom: 1px solid var(--line);
+}
+h3,
+h4,
+h5,
+h6 {
+margin-top: 2rem;
+}
+img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 1rem auto 0.35rem;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 1.25rem 0;
+}
+th,
+td {
+border: 1px solid var(--line);
+padding: 0.7rem;
+vertical-align: top;
+}
+th {
+background: var(--surface);
+text-align: left;
+}
+blockquote {
+margin: 1.2rem 0;
+padding: 0.7rem 1rem;
+border-left: 4px solid var(--brand);
+background: var(--surface);
+}
+code {
+font-family: Consolas, "Courier New", monospace;
+}
+pre {
+overflow-x: auto;
+padding: 1rem;
+border-radius: 8px;
+background: var(--surface);
+}
+
+body > h1:first-of-type {
+margin: -50px calc(50% - 50vw) 3rem;
+padding: 3.5rem max(50px, calc((100vw - 1120px) / 2));
+border: 0;
+background: linear-gradient(135deg, #250777, #3e16a3);
+color: #ffffff;
+font-size: clamp(2rem, 5vw, 3.5rem);
+line-height: 1.1;
+}
+@media (max-width: 640px) {
+body {
+padding: 20px;
+}
+body > h1:first-of-type {
+margin-top: -20px;
+padding: 2.5rem 20px;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="segger-rtt--third-party-source">SEGGER RTT — third-party
+source</h1>
+<p>This folder holds the SEGGER Real-Time Transfer (RTT) engine used by
+the Segger RTT Logger RS, plus the repository’s own RTT
+configuration.</p>
+<h2 id="origin">Origin</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Component</td>
+<td>SEGGER RTT (Real-Time Transfer)</td>
+</tr>
+<tr>
+<td>Version</td>
+<td><strong>V8.58</strong> — latest official release</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>SEGGER’s official repository <a href="https://github.com/SEGGERMicro/RTT">github.com/SEGGERMicro/RTT</a>,
+tag <a href="https://github.com/SEGGERMicro/RTT/tree/V8.58">V8.58</a>
+(commit <code>4d8feab</code>)</td>
+</tr>
+<tr>
+<td>Download (V8.58)</td>
+<td><a href="https://github.com/SEGGERMicro/RTT/archive/refs/tags/V8.58.zip">Source
+code (zip)</a> · <a href="https://github.com/SEGGERMicro/RTT/archive/refs/tags/V8.58.tar.gz">Source
+code (tar.gz)</a></td>
+</tr>
+<tr>
+<td>License</td>
+<td>BSD (SEGGER), see <code>LICENSE.md</code> in this folder</td>
+</tr>
+</tbody>
+</table>
+<h2 id="files">Files</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SEGGER_RTT.c</code></td>
+<td><strong>Unmodified</strong> SEGGER file —
+<code>RTT/SEGGER_RTT.c</code> of V8.58</td>
+</tr>
+<tr>
+<td><code>SEGGER_RTT.h</code></td>
+<td><strong>Unmodified</strong> SEGGER file —
+<code>RTT/SEGGER_RTT.h</code> of V8.58</td>
+</tr>
+<tr>
+<td><code>SEGGER_RTT_ConfDefaults.h</code></td>
+<td><strong>Unmodified</strong> SEGGER file —
+<code>RTT/SEGGER_RTT_ConfDefaults.h</code> of V8.58. Supplies the
+default of every RTT setting that <code>SEGGER_RTT_Conf.h</code> does
+not define</td>
+</tr>
+<tr>
+<td><code>LICENSE.md</code></td>
+<td><strong>Unmodified</strong> SEGGER license — <code>LICENSE.md</code>
+of V8.58. Kept because the V8.58 source files no longer carry the
+license text in their header</td>
+</tr>
+<tr>
+<td><code>SEGGER_RTT_Conf.h</code></td>
+<td><strong>Renesas custom configuration</strong> — replaces the
+repository’s <code>Config/SEGGER_RTT_Conf.h</code>: channel 0 only, 1024
+B up / 64 B down, <code>SEGGER_RTT_MODE_NO_BLOCK_TRIM</code>, CMSIS
+PRIMASK locking, no RTOS</td>
+</tr>
+</tbody>
+</table>
+<p>How the configuration works in V8.58: <code>SEGGER_RTT.h</code>
+includes <code>SEGGER_RTT_ConfDefaults.h</code>, which first includes
+<code>SEGGER_RTT_Conf.h</code> and then defines a default only for each
+setting that is still undefined (<code>#ifndef</code>). The values in
+<code>SEGGER_RTT_Conf.h</code> therefore take precedence.</p>
+<p>Files of the SEGGER repository that are deliberately
+<strong>not</strong> included: <code>RTT/SEGGER_RTT_printf.c</code> (the
+RS uses picolibc stdio instead),
+<code>RTT/SEGGER_RTT_ASM_ARMv7M.S</code> (the C implementation is used),
+<code>Syscalls/*</code> (<code>rs_segger_rtt_logger_picolibc.c</code> is
+the only stdio binding) and <code>Examples/*</code>.</p>
+<h2 id="updating-to-another-segger-rtt-version">Updating to another
+SEGGER RTT version</h2>
+<ol type="1">
+<li>Download the tag of the new version from <a href="https://github.com/SEGGERMicro/RTT/tags">github.com/SEGGERMicro/RTT</a>.</li>
+<li>Replace <code>SEGGER_RTT.c</code>, <code>SEGGER_RTT.h</code>,
+<code>SEGGER_RTT_ConfDefaults.h</code> and <code>LICENSE.md</code> with
+the files of that tag. Do not modify them (SEGGER recommends against
+changes).</li>
+<li>Keep <code>SEGGER_RTT_Conf.h</code>, and check
+<code>SEGGER_RTT_ConfDefaults.h</code> for new or renamed settings.</li>
+<li>Update the version in this file and in the project
+<code>README.md</code>.</li>
+</ol>
+</body>
+</html>

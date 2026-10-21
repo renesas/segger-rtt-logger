@@ -1,0 +1,44 @@
+# e² studio / Eclipse build output
+Debug/
+Release/
+*_Debug/
+*_Release/
+
+# JLink logs
+*.log
+*.jlink
+
+# Eclipse workspace metadata
+.metadata/
+**/.settings/language.settings.xml
+**/.settings/e2studio_project.prefs
+**/.settings/CoverageSetting.xml
+**/.settings/DebugVirtualConsoleSetting.xml
+**/.settings/IORegisterSetting.xml
+
+# CMake / VS Code build output (machine-specific, absolute paths baked in)
+/build/
+examples/*/build/
+examples/*/compile_commands.json
+examples/*/buildinfo.json
+examples/*/.cache/
+
+# FSP code generated from configuration.xml (Generate Project Content)
+examples/*/ra/
+examples/*/ra_gen/
+examples/*/ra_cfg/
+examples/*/ra_cfg.txt
+
+# RASC-generated linker and TrustZone files (regenerated on every build)
+examples/*/bsp_linker_info.h
+examples/*/fsp_gen.lld
+examples/*/memory_regions.lld
+examples/*/.secure_azone
+examples/*/.secure_rzone
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings created when opening the repository root (machine-specific paths)
+/.vscode/
